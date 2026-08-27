@@ -1,0 +1,22 @@
+START
+
+Set number of simulations N = 10000
+Set on_time_count = 0
+
+FOR i = 1 TO N
+
+    Generate random traffic condition
+    Generate random delivery time
+
+    IF delivery time <= allowed delivery time THEN
+        on_time_count = on_time_count + 1
+    END IF
+
+END FOR
+
+Calculate probability:
+    probability = on_time_count / N
+
+Display probability
+
+STOP
