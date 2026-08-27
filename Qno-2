@@ -1,0 +1,38 @@
+START
+
+Set number of movies K
+Set ε = 0.1
+Set number of interactions N
+
+Initialize reward_sum[K] = 0
+Initialize count[K] = 0
+
+FOR each interaction:
+
+    Generate random number
+
+    IF random number < ε THEN
+        Select a random movie          // Exploration
+    ELSE
+        Select movie with highest
+        average reward                 // Exploitation
+    END IF
+
+    Show selected movie
+    Receive user reward
+
+    Update reward_sum[movie]
+    Update count[movie]
+
+    Calculate average reward:
+        reward_estimate =
+        reward_sum[movie] / count[movie]
+
+END FOR
+
+Select movie with highest
+average reward
+
+Display best movie
+
+STOP
