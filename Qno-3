@@ -1,0 +1,43 @@
+START
+
+Initialize value V(s) = 0 for all states
+
+Set discount factor γ
+Set convergence limit θ
+
+REPEAT
+
+    Set Δ = 0
+
+    FOR each state s:
+
+        IF s is Goal or Obstacle:
+            Continue
+
+        Calculate value for each possible action:
+
+            Q(s,a) =
+            Reward(s,a) +
+            γ × V(next_state)
+
+        Update:
+
+            V(s) = MAX Q(s,a)
+
+        Calculate change Δ
+
+    END FOR
+
+UNTIL Δ < θ
+
+FOR each state s:
+
+    Select action with highest Q(s,a)
+    Store it as the optimal policy
+
+END FOR
+
+Display optimal value function
+Display optimal policy
+
+STOP
