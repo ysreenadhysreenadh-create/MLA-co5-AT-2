@@ -1,0 +1,33 @@
+START
+
+Initialize V(s) = 0 for all states
+
+Set learning rate α
+Set discount factor γ
+
+FOR each game episode:
+
+    Initialize current state S
+
+    WHILE game is not over:
+
+        Observe reward R
+        Observe next state S'
+
+        Calculate TD Target:
+            Target = R + γ × V(S')
+
+        Update state value:
+            V(S) = V(S) + α ×
+                   [Target - V(S)]
+
+        Set:
+            S = S'
+
+    END WHILE
+
+END FOR
+
+Display final state-value estimates
+
+STOP
