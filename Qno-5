@@ -1,0 +1,31 @@
+START
+
+Initialize a random policy π(s) for all states
+
+REPEAT
+
+    // Policy Evaluation
+    REPEAT
+        For each state s:
+            V(s) = R(s, π(s)) + γ × V(next_state)
+    UNTIL values converge
+
+    // Policy Improvement
+    policy_stable = TRUE
+
+    FOR each state s:
+        old_action = π(s)
+
+        Select action with maximum value:
+            π(s) = argmax [R(s,a) + γV(next_state)]
+
+        IF old_action ≠ π(s):
+            policy_stable = FALSE
+
+    END FOR
+
+UNTIL policy_stable = TRUE
+
+Display optimal policy
+
+STOP
